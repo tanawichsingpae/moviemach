@@ -564,3 +564,7 @@ def search(q: str):
         })
 
     return output
+
+@app.get("/")
+def root():
+    return {"status": "ok"}
