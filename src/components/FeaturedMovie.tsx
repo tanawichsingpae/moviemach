@@ -3,12 +3,10 @@ import { Play, Info, Star } from "lucide-react";
 interface FeaturedMovieProps {
   image: string;
   title: string;
-  rating: string;
-  imdb: string;
-  description: string;
+  subtitle: string;
 }
 
-const FeaturedMovie = ({ image, title, rating, imdb, description }: FeaturedMovieProps) => {
+const FeaturedMovie = ({ image, title, subtitle }: FeaturedMovieProps) => {
   return (
     <section className="relative w-full min-h-[500px] md:min-h-[600px] overflow-hidden">
       <img
@@ -23,17 +21,8 @@ const FeaturedMovie = ({ image, title, rating, imdb, description }: FeaturedMovi
         <h2 className="font-display text-4xl md:text-6xl tracking-wide text-foreground mb-3">
           {title}
         </h2>
-        <div className="flex items-center gap-3 mb-3">
-          <div className="flex">
-            {[1, 2, 3, 4].map((i) => (
-              <Star key={i} className="w-3.5 h-3.5 fill-primary text-primary" />
-            ))}
-            <Star className="w-3.5 h-3.5 text-primary/40" />
-          </div>
-          <span className="text-xs text-muted-foreground">IMDb {imdb}</span>
-        </div>
         <p className="text-sm text-secondary-foreground/60 mb-6 leading-relaxed">
-          {description}
+          {subtitle}
         </p>
         <div className="flex items-center gap-3">
           <button className="flex items-center gap-2 bg-primary text-primary-foreground px-6 py-2.5 rounded-full font-semibold text-sm hover:opacity-90 transition-opacity">
