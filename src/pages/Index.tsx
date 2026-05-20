@@ -34,7 +34,7 @@ const Index = () => {
 };
   // 🔥 โหลด Top Rated จาก /movies
   useEffect(() => {
-  fetch("https://moviemach-4.onrender.com/movies?page=1&limit=20")
+  fetch(`${import.meta.env.VITE_API_URL}/movies?page=1&limit=20`)
     .then((res) => res.json())
     .then((response) => {
       const formatted = response.data.map((movie: any) => ({
@@ -54,7 +54,7 @@ const Index = () => {
 
   // 🔥 โหลด Recommend จาก KNIME
   useEffect(() => {
-    fetch("https://moviemach-4.onrender.com/recommend/1")
+    fetch(`${import.meta.env.VITE_API_URL}/recommend/1`)
       .then((res) => res.json())
       .then((data) => {
         const formatted = data.map((movie: any) => ({

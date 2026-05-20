@@ -24,9 +24,9 @@ const MoviesPage = () => {
   let url = "";
 
   if (type === "recommended") {
-    url = "https://moviemach-4.onrender.com/recommend/1?limit=50";
+    url = `${import.meta.env.VITE_API_URL}/recommend/1?limit=50`;
   } else if (type === "top") {
-    url = "https://moviemach-4.onrender.com/movies?page=1&limit=50";
+    url = `${import.meta.env.VITE_API_URL}/movies?page=1&limit=50`;
   } else {
     return; // กันกรณี type แปลก ๆ
   }

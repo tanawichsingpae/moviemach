@@ -32,7 +32,7 @@ const SearchPage = () => {
   setMovies([]);
   setLoading(true);
 
-  fetch(`https://moviemach-4.onrender.com/search?q=${encodeURIComponent(query)}`)
+  fetch(`${import.meta.env.VITE_API_URL}/search?q=${encodeURIComponent(query)}`)
     .then((res) => res.json())
     .then((data) => {
       const formatted = data.map((movie: any) => ({

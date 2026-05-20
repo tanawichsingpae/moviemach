@@ -9,7 +9,7 @@ const HeroSection = () => {
   useEffect(() => {
   const baseMovieId = 1;
 
-  fetch(`https://moviemach-4.onrender.com/movie/${baseMovieId}`)
+  fetch(`${import.meta.env.VITE_API_URL}/movie/${baseMovieId}`)
     .then((res) => res.json())
     .then((data) => {
       setMovie(data);

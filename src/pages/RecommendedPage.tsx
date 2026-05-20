@@ -7,7 +7,7 @@ const RecommendedPage = () => {
   const [movies, setMovies] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch(`https://moviemach-4.onrender.com/recommend/${id}?limit=30000`)
+    fetch(`${import.meta.env.VITE_API_URL}/recommend/${id}?limit=30000`)
       .then((res) => res.json())
       .then((data) => setMovies(data))
       .catch((err) => console.error(err));
